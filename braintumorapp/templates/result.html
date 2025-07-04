@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .result-container {
+            max-width: 700px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .result-title {
+            font-size: 30px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .card {
+            border-radius: 12px;
+            background: rgb(228, 234, 228);
+            padding: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the image and text */
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 50%; /* Keeps the image responsive */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .prediction-text {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+{% if prediction %}
+    <div class="container result-container text-center">
+        <h2 class="result-title">Prediction Result</h2>
+        <div class="card p-4">
+            <img src="{{ image.image.url }}" class="img-fluid rounded shadow mb-3" alt="Uploaded MRI Scan">
+            <p class="prediction-text {% if prediction|lower == 'no tumor' %}text-success{% else %}text-danger{% endif %}">
+                The patient has detected brain tumor of type <strong>{{ prediction }}</strong>
+            </p>
+            <a href="{% url 'upload_image' %}" class="btn btn-custom mt-3">Upload Another Image</a>
+        </div>
+    </div>
+{% endif %}
+
+</body>
+</html>
+
+
+
 
