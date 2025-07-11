@@ -34,7 +34,7 @@ This project focuses on detecting brain tumors from MRI images using a Convoluti
 
 ---
 
-## Rsult Images
+## Result Images
 
 ![WhatsApp Image 2025-07-11 at 20 23 09_6208a3b6](https://github.com/user-attachments/assets/d36af069-e926-447e-af42-5af3290a158e)
 ![WhatsApp Image 2025-07-11 at 20 23 09_3d39a7d0](https://github.com/user-attachments/assets/c03c640c-c284-4397-a61a-d850aaad2388)
